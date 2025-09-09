@@ -49,7 +49,7 @@ class MovieSubtitle(BaseModel):
 
 
 
-class Posterlmage(BaseModel):
+class PosterImage(BaseModel):
     language = models.ForeignKey(Language, on_delete=models.PROTECT)
     movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
     image = models.ImageField(upload_to="movies/posters/")
