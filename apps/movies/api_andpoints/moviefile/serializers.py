@@ -6,6 +6,6 @@ from apps.movies.models import MovieFile
 class MovieFileDetailSerializers(serializers.ModelSerializer):
     class Meta:
         model = MovieFile
-        fields = ['id', 'language', 'movie', 'file']
+        fields = ['id', 'language', 'movie', 'file', 'quality']
 
 
