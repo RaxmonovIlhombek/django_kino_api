@@ -1,5 +1,5 @@
 from django.urls import path
-from apps.movies.api_andpoints import genre, language, movie, moviaudio, watchsession
+from apps.movies.api_andpoints import genre, language, movie, moviaudio
 from apps.movies.api_andpoints.movie import MovieDetail
 
 
@@ -11,7 +11,7 @@ urlpatterns = [
     path('movies/',movie.MovieListView.as_view(), name='movies_list'),
     path('movieaudio/',moviaudio.MovieAudioListView.as_view(), name='movieaudio_list'),
     path('<int:pk>/', MovieDetail.MovieDetailView.as_view(), name='movie_detail'),
-    path('watchsession/', watchsession.WatchSessionView.as_view(), name='watchsession'),
+
 ]
 
 
