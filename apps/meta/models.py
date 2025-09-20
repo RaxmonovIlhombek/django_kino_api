@@ -18,15 +18,15 @@ class WatchSession(BaseModel):
 
 class Like(BaseModel):
     movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
-    watch_session = models.ForeignKey(WatchSession,on_delete=models.PROTECT)
+    watch_session = models.ForeignKey(WatchSession,on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return f"Like: {self.movie.title})"
     
 
 class Comment(BaseModel):
-    movie = models.ForeignKey(Movie,on_delete=models.CASCADE)
-    watch_session = models.ForeignKey(WatchSession,on_delete=models.PROTECT)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    watch_session = models.ForeignKey(WatchSession, on_delete=models.SET_NULL, null=True)
     text = models.TextField()
     
     def __str__(self):
